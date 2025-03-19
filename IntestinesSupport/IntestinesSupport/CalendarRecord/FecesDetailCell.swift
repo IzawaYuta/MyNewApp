@@ -155,9 +155,8 @@ class FecesDetailCell: UITableViewCell {
         banner.addSubview(messageLabel)
         
         NSLayoutConstraint.activate([
-            banner.leadingAnchor.constraint(equalTo: parentView.leadingAnchor, constant: 20),
-            banner.trailingAnchor.constraint(equalTo: parentView.trailingAnchor, constant: -20),
-            banner.bottomAnchor.constraint(equalTo: parentView.bottomAnchor, constant: -50),
+            banner.centerXAnchor.constraint(equalTo: parentView.centerXAnchor), // 左右中央X軸
+            banner.widthAnchor.constraint(equalToConstant: 250),
             banner.heightAnchor.constraint(equalToConstant: 50)
         ])
         
@@ -167,14 +166,19 @@ class FecesDetailCell: UITableViewCell {
             messageLabel.topAnchor.constraint(equalTo: banner.topAnchor, constant: 10),
             messageLabel.bottomAnchor.constraint(equalTo: banner.bottomAnchor, constant: -10)
         ])
+        parentView.layoutIfNeeded()
         
-        UIView.animate(withDuration: 0.3, animations: {
-            banner.alpha = 1.0
+        // アニメーション1: 上から降りてくる
+        UIView.animate(withDuration: 0.5, animations: {
+            banner.transform = CGAffineTransform(translationX: 0, y: 80) // 上から降りてくる
         }) { _ in
-            UIView.animate(withDuration: 0.3, delay: 1.0, options: [], animations: {
-                banner.alpha = 0.0
-            }) { _ in
-                banner.removeFromSuperview()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                UIView.animate(withDuration: 0.5, animations: {
+                    banner.transform = CGAffineTransform(translationX: 0, y: -100) // 上にスライド
+                }) { _ in
+                    // アニメーション終了後にバナーを削除
+                    banner.removeFromSuperview()
+                }
             }
         }
     }
