@@ -13,6 +13,8 @@ class MedicineAdditionTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var unitLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var timePicker: UIDatePicker!
+    var modelId: String = ""
+    
     
     var modelId: String = ""
     

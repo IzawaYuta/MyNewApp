@@ -477,7 +477,6 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource  {
             updateMedicineDataModel(medicineRecord, isDelete: true)
             let realm = try! Realm()
             if index < medicineRecordDataModel.count {
-                let medicineRecord = medicineRecordDataModel[index]
                 try! realm.write {
                     realm.delete(medicineRecord)
                 }
@@ -540,6 +539,7 @@ extension CalendarViewController: FecesDetailCellDelegate, AdditionButtonCellDel
             
             let newIndex = medicineRecordDataModel.count - 1
             let medicineRecordCount = medicineRecordDataModel.count
+            updateMedicineDataModel(record, isDelete: false)
             
             updateMedicineDataModel(record, isDelete: false)
             
