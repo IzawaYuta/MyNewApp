@@ -75,7 +75,7 @@ class FecesRecordViewController: UIViewController, UITableViewDelegate, UITableV
         // fecesDetailsが空の場合は EmptyStateCell を使用
         if fecesDetails.isEmpty {
             let emptyCell = tableView.dequeueReusableCell(withIdentifier: "EmptyStateCell", for: indexPath) as! EmptyStateCell
-            emptyCell.messageLabel.text = "記録はありません"
+            emptyCell.messageLabel.text = "排便の記録はありません"
             emptyCell.messageLabel.textColor = .gray
             emptyCell.messageLabel.textAlignment = .center
             emptyCell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
