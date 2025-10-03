@@ -46,7 +46,7 @@ class PeriodCell: UITableViewCell, UITextFieldDelegate, UIPickerViewDelegate, UI
     // 2の倍数かどうかを検知して背景色を変更
     var cellIndex: Int = 0 {
         didSet {
-            if cellIndex % 2 == 0 {
+            if cellIndex % 2 != 0 {
                 self.backgroundColor = .white
             } else {
                 self.backgroundColor = .lightGray.withAlphaComponent(0.1)

@@ -34,7 +34,7 @@ class MedicineAdditionViewController: UIViewController, UITableViewDelegate, UIT
         tableView.allowsMultipleSelection = true
         loadMedicines()
         selectedCellButton()
-        buttonSetup()
+//        buttonSetup()
     }
     
     func loadMedicines() {
@@ -116,17 +116,8 @@ class MedicineAdditionViewController: UIViewController, UITableViewDelegate, UIT
                     // セルの情報をデータモデルに保存
                     record.medicineName = cell.medicineName.text ?? ""
                     record.unit = cell.unitLabel.text ?? ""
-                    record.id = cell.modelId
-                    
-                    if let doseText = cell.textField.text {
-                        if let doseInt = Int(doseText) {
-                            // 整数の場合は Double 型に変換して保存
-                            record.textField = Double(doseInt)
-                        } else if let doseDouble = Double(doseText) {
-                            // 小数の場合はそのまま保存
-                            record.textField = doseDouble
-                        }
-                    }
+                    record.label = cell.textField.text ?? ""
+                    record.medicineModelId = cell.modelId
                     
                     if let selectDate {
                         record.date = selectDate
@@ -158,13 +149,13 @@ class MedicineAdditionViewController: UIViewController, UITableViewDelegate, UIT
         medicineAdditionButton.isEnabled = !selectedIndexPaths.isEmpty
     }
     
-    private func buttonSetup() {
-        medicineAdditionButton.backgroundColor = UIColor.clear // 背景色
-        medicineAdditionButton.layer.borderWidth = 2.0 // 枠線の幅
-        medicineAdditionButton.layer.borderColor = UIColor.blue.cgColor // 枠線の色
-        medicineAdditionButton.layer.cornerRadius = 10.0 // 角丸のサイズ
-        medicineAdditionButton.tintColor = UIColor.blue
-    }
+//    private func buttonSetup() {
+//        medicineAdditionButton.backgroundColor = UIColor.clear // 背景色
+//        medicineAdditionButton.layer.borderWidth = 2.0 // 枠線の幅
+//        medicineAdditionButton.layer.borderColor = UIColor.blue.cgColor // 枠線の色
+//        medicineAdditionButton.layer.cornerRadius = 10.0 // 角丸のサイズ
+//        medicineAdditionButton.tintColor = UIColor.blue
+//    }
 }
 
 extension MedicineAdditionViewController: AdditionButtonCellDelegate, MedicineViewControllerDelegate {

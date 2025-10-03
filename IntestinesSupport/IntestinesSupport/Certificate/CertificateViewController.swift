@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import RealmSwift
 
-class CertificateViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PlusButtonCellDelegate, CertificateViewControllerDelegate {
+class CertificateViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CertificateViewControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -24,14 +24,17 @@ class CertificateViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.delegate = self
         tableView.dataSource = self
         
+        navigationController?.navigationBar.isHidden = true
+        tableView
+        
         tableView.register(UINib(nibName: "ApplicationClassificationCell", bundle: nil), forCellReuseIdentifier: "ApplicationClassificationCell")
         tableView.register(UINib(nibName: "MoneyCell", bundle: nil), forCellReuseIdentifier: "MoneyCell")
         tableView.register(UINib(nibName: "HierarchyClassificationCell", bundle: nil), forCellReuseIdentifier: "HierarchyClassificationCell")
         tableView.register(UINib(nibName: "DeadlineCell", bundle: nil), forCellReuseIdentifier: "DeadlineCell")
         tableView.register(UINib(nibName: "PeriodCell", bundle: nil), forCellReuseIdentifier: "PeriodCell")
-        tableView.register(UINib(nibName: "PlusButtonCell", bundle: nil), forCellReuseIdentifier: "PlusButtonCell")
+//        tableView.register(UINib(nibName: "PlusButtonCell", bundle: nil), forCellReuseIdentifier: "PlusButtonCell")
         
-        tableViewCell = ["ApplicationClassificationCell", "MoneyCell", "HierarchyClassificationCell", "DeadlineCell", "PeriodCell", "PlusButtonCell"]
+        tableViewCell = ["ApplicationClassificationCell", "MoneyCell", "HierarchyClassificationCell", "DeadlineCell", "PeriodCell"]
         loadCertificates()
         saveData()
     }
@@ -67,6 +70,7 @@ class CertificateViewController: UIViewController, UITableViewDelegate, UITableV
                 applicationClassificationCell.certificateId = data.id
             }
             applicationClassificationCell.setDoneButton()
+            applicationClassificationCell.backgroundColor = .gray.withAlphaComponent(0.1)
             return applicationClassificationCell
         } else if identifier == "MoneyCell" {
             let moneyCell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! MoneyCell
@@ -78,7 +82,6 @@ class CertificateViewController: UIViewController, UITableViewDelegate, UITableV
                 moneyCell.certificateId = data.id
             }
             moneyCell.setDoneButton()
-            moneyCell.backgroundColor = .gray.withAlphaComponent(0.1)
             return moneyCell
         } else if identifier == "HierarchyClassificationCell" {
             let hierarchyClassificationCell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! HierarchyClassificationCell
@@ -89,6 +92,7 @@ class CertificateViewController: UIViewController, UITableViewDelegate, UITableV
                 hierarchyClassificationCell.certificateId = data.id
             }
             hierarchyClassificationCell.setDoneButton()
+            hierarchyClassificationCell.backgroundColor = .gray.withAlphaComponent(0.1)
             return hierarchyClassificationCell
         } else if identifier == "DeadlineCell" {
             let deadlineCell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! DeadlineCell
@@ -104,7 +108,6 @@ class CertificateViewController: UIViewController, UITableViewDelegate, UITableV
                 deadlineCell.certificateId = data.id
             }
             deadlineCell.setDoneButton()
-            deadlineCell.backgroundColor = .gray.withAlphaComponent(0.1)
             return deadlineCell
         } else if identifier == "PeriodCell" {
             let periodCell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! PeriodCell
@@ -125,11 +128,11 @@ class CertificateViewController: UIViewController, UITableViewDelegate, UITableV
             
             periodCell.cellIndex = indexPath.row
             return periodCell
-        } else if identifier == "PlusButtonCell" {
-            let plusButtonCell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! PlusButtonCell
-            plusButtonCell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude) // 下辺の線を消す
-            plusButtonCell.delegate = self
-            return plusButtonCell
+//        } else if identifier == "PlusButtonCell" {
+//            let plusButtonCell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! PlusButtonCell
+//            plusButtonCell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude) // 下辺の線を消す
+//            plusButtonCell.delegate = self
+//            return plusButtonCell
         } else {
             return UITableViewCell()
         }
@@ -148,59 +151,59 @@ class CertificateViewController: UIViewController, UITableViewDelegate, UITableV
             return 155
         case "PeriodCell":
             return 155
-        case "PlusButtonCell":
-            return 40
+//        case "PlusButtonCell":
+//            return 40
         default:
             return 70
         }
     }
     // 削除の設定
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        // セルが２つしかない時は削除を無効
-        let periodCellsCount = tableViewCell.filter { $0 == "PeriodCell" }.count
-        if tableViewCell[indexPath.row] == "PeriodCell" && periodCellsCount > 2 {
-            return .delete
-        }
-        return .none
-    }
+//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+//        // セルが２つしかない時は削除を無効
+//        let periodCellsCount = tableViewCell.filter { $0 == "PeriodCell" }.count
+//        if tableViewCell[indexPath.row] == "PeriodCell" && periodCellsCount > 2 {
+//            return .delete
+//        }
+//        return .none
+//    }
     // 編集操作
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            guard indexPath.row < certificateDataModel.count && indexPath.row < tableViewCell.count else { return }
-            
-            let realm = try! Realm()
-            let dataToDelete = certificateDataModel[indexPath.row]
-            
-            try! realm.write {
-                realm.delete(dataToDelete)
-            }
-            // TableViewのデータソースから削除
-            tableViewCell.remove(at: indexPath.row)
-            // CertificateDataModelから削除する
-            certificateDataModel.remove(at: indexPath.row)
-            // TableViewからセルを削除
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-            tableView.reloadData()
-        }
-    }
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            guard indexPath.row < certificateDataModel.count && indexPath.row < tableViewCell.count else { return }
+//            
+//            let realm = try! Realm()
+//            let dataToDelete = certificateDataModel[indexPath.row]
+//            
+//            try! realm.write {
+//                realm.delete(dataToDelete)
+//            }
+//            // TableViewのデータソースから削除
+//            tableViewCell.remove(at: indexPath.row)
+//            // CertificateDataModelから削除する
+//            certificateDataModel.remove(at: indexPath.row)
+//            // TableViewからセルを削除
+//            tableView.deleteRows(at: [indexPath], with: .automatic)
+//            tableView.reloadData()
+//        }
+//    }
     
-    func didTapPlusButton(in cell: PlusButtonCell) {
-        let realm = try! Realm()
-        let newCertificate = CertificateDataModel()
-        
-        try! realm.write {
-            realm.add(newCertificate)
-        }
-        
-        certificateIds.append(newCertificate.id)
-        tableViewCell.insert("PeriodCell", at: tableViewCell.count - 1) // PlusButtonCell の前に追加
-        
-        didSaveCertificate(newCertificate)
-        
-        tableView.reloadData()
-        
-        saveData()
-    }
+//    func didTapPlusButton(in cell: PlusButtonCell) {
+//        let realm = try! Realm()
+//        let newCertificate = CertificateDataModel()
+//        
+//        try! realm.write {
+//            realm.add(newCertificate)
+//        }
+//        
+//        certificateIds.append(newCertificate.id)
+//        tableViewCell.insert("PeriodCell", at: tableViewCell.count - 1) // PlusButtonCell の前に追加
+//        
+//        didSaveCertificate(newCertificate)
+//        
+//        tableView.reloadData()
+//        
+//        saveData()
+//    }
     
     private func saveData() {
         let realm = try! Realm()

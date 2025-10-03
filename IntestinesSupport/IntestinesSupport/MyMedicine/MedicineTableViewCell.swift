@@ -19,5 +19,12 @@ class MedicineTableViewCell: UITableViewCell {
         stockLabel.numberOfLines = 1 // 1行で表示する
         stockNumberLabel.numberOfLines = 1 // 1行で表示する
         stockUnitLabel.numberOfLines = 1 // 1行で表示する
+        
+        medicineNameLabel.backgroundColor = .systemBlue.withAlphaComponent(0.2)
+        medicineNameLabel.layer.cornerRadius = 7.0
+        medicineNameLabel.clipsToBounds = true // labelの時は必須（角丸）
+        medicineNameLabel.layer.borderColor = UIColor.red.cgColor // 枠線の色
+        
+        stockNumberLabel.textColor = .red
     }
 }

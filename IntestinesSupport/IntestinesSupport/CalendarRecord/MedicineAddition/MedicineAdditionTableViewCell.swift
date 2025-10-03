@@ -16,6 +16,8 @@ class MedicineAdditionTableViewCell: UITableViewCell, UITextFieldDelegate {
     var modelId: String = ""
     
     
+    var modelId: String = ""
+    
     weak var delegate: MedicineAdditionViewControllerDelegate?
     
     var addedAmount: Int {

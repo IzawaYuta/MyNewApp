@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 protocol FecesDetailCellDelegate: AnyObject {
     func didTapPlusButton(indexes: [Int])

@@ -65,10 +65,11 @@ class FecesDetailTypeObject: Object {
 
 class MedicineRecordDataModel: Object {
     @objc dynamic var id: String = UUID().uuidString
+    @objc dynamic var medicineModelId: String = ""
     @objc dynamic var date: Date = Date()
     @objc dynamic var medicineName: String = ""
     @objc dynamic var timePicker: Date = Date()
-    @objc dynamic var textField: Double = 0.0
+    @objc dynamic var label: String = ""
     @objc dynamic var unit: String = ""
     
     override init() {
@@ -78,13 +79,14 @@ class MedicineRecordDataModel: Object {
         return "id" // プライマリーキーの指定
     }
     
-    convenience init(id: String,date: Date, medicineName: String, timePicker: Date, textField: Double, unit: String) {
+    convenience init(id: String, medicineModelId: String,date: Date, medicineName: String, timePicker: Date, label: String, unit: String) {
         self.init()
         self.id = id
+        self.medicineModelId = medicineModelId
         self.date = date
         self.medicineName = medicineName
         self.timePicker = timePicker
-        self.textField = textField
+        self.label = label
         self.unit = unit
     }
 }

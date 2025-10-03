@@ -1,0 +1,105 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "4gI-d5-oNl"; */
+"4gI-d5-oNl.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Myお薬"; ObjectID = "6VB-yl-vCm"; */
+"6VB-yl-vCm.title" = "Myお薬";
+
+/* Class = "UINavigationItem"; title = "グラフ"; ObjectID = "6e4-z3-Voc"; */
+"6e4-z3-Voc.title" = "グラフ";
+
+/* Class = "UITabBarItem"; title = "サポート"; ObjectID = "CKr-5k-Fc8"; */
+"CKr-5k-Fc8.title" = "サポート";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "CL4-gR-UJv"; */
+"CL4-gR-UJv.text" = "1";
+
+/* Class = "UILabel"; text = "URL"; ObjectID = "DE9-lh-YTJ"; */
+"DE9-lh-YTJ.text" = "URL";
+
+/* Class = "UIButton"; configuration.title = "削除"; ObjectID = "DX3-3m-bQ9"; */
+"DX3-3m-bQ9.configuration.title" = "削除";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "DX3-3m-bQ9"; */
+"DX3-3m-bQ9.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "EdB-Oi-QBb"; */
+"EdB-Oi-QBb.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "錠"; ObjectID = "EmV-hR-wuv"; */
+"EmV-hR-wuv.text" = "錠";
+
+/* Class = "UITabBarItem"; title = "記録"; ObjectID = "GZd-kh-ac3"; */
+"GZd-kh-ac3.title" = "記録";
+
+/* Class = "UINavigationItem"; title = "記録"; ObjectID = "MFW-zV-Gcm"; */
+"MFW-zV-Gcm.title" = "記録";
+
+/* Class = "UILabel"; text = "メモ"; ObjectID = "OV2-dd-Gmc"; */
+"OV2-dd-Gmc.text" = "メモ";
+
+/* Class = "UIButton"; configuration.title = "保存"; ObjectID = "QSY-Ts-Meh"; */
+"QSY-Ts-Meh.configuration.title" = "保存";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "QSY-Ts-Meh"; */
+"QSY-Ts-Meh.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "1日"; ObjectID = "QqW-RY-Nzk"; */
+"QqW-RY-Nzk.text" = "1日";
+
+/* Class = "UILabel"; text = "3"; ObjectID = "SHm-Wl-vPK"; */
+"SHm-Wl-vPK.text" = "3";
+
+/* Class = "UILabel"; text = "在庫"; ObjectID = "X3n-Ym-AfJ"; */
+"X3n-Ym-AfJ.text" = "在庫";
+
+/* Class = "UILabel"; text = "時間"; ObjectID = "buv-5D-gXj"; */
+"buv-5D-gXj.text" = "時間";
+
+/* Class = "UIButton"; configuration.title = "服用✔️"; ObjectID = "c5y-rd-kM4"; */
+"c5y-rd-kM4.configuration.title" = "服用✔️";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "c5y-rd-kM4"; */
+"c5y-rd-kM4.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "1回"; ObjectID = "cCA-uS-DdY"; */
+"cCA-uS-DdY.text" = "1回";
+
+/* Class = "UILabel"; text = "回"; ObjectID = "cYk-Oc-SuY"; */
+"cYk-Oc-SuY.text" = "回";
+
+/* Class = "UIButton"; configuration.title = "お薬を追加"; ObjectID = "gLP-Vy-qjZ"; */
+"gLP-Vy-qjZ.configuration.title" = "お薬を追加";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "gLP-Vy-qjZ"; */
+"gLP-Vy-qjZ.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "サポート"; ObjectID = "nK5-TG-3zs"; */
+"nK5-TG-3zs.title" = "サポート";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "pyo-zW-ZI5"; */
+"pyo-zW-ZI5.text" = "1";
+
+/* Class = "UISegmentedControl"; v23-tB-h6P.segmentTitles[0] = "体調"; ObjectID = "v23-tB-h6P"; */
+"v23-tB-h6P.segmentTitles[0]" = "体調";
+
+/* Class = "UISegmentedControl"; v23-tB-h6P.segmentTitles[1] = "便の調子"; ObjectID = "v23-tB-h6P"; */
+"v23-tB-h6P.segmentTitles[1]" = "便の調子";
+
+/* Class = "UISegmentedControl"; v23-tB-h6P.segmentTitles[2] = "便の回数"; ObjectID = "v23-tB-h6P"; */
+"v23-tB-h6P.segmentTitles[2]" = "便の回数";
+
+/* Class = "UINavigationItem"; title = "Myお薬"; ObjectID = "vni-D1-4PS"; */
+"vni-D1-4PS.title" = "Myお薬";
+
+/* Class = "UILabel"; text = "用量"; ObjectID = "xL5-TH-sjR"; */
+"xL5-TH-sjR.text" = "用量";
+
+/* Class = "UITabBarItem"; title = "受給者証"; ObjectID = "yDz-Jd-E8l"; */
+"yDz-Jd-E8l.title" = "受給者証";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "zI3-1f-vUk"; */
+"zI3-1f-vUk.title" = "Item";
+
+/* Class = "UILabel"; text = "お薬の名前"; ObjectID = "zjl-fe-njk"; */
+"zjl-fe-njk.text" = "お薬の名前";

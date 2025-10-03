@@ -9,14 +9,13 @@ import UIKit
 
 protocol MedicineRecordDetailCellDelegate: AnyObject {
     func didChangeData(for cell: MedicineRecordDetailCell, newTime: Date)
-    func didChangeTextData(for cell: MedicineRecordDetailCell, newText: Double)
 }
 
 class MedicineRecordDetailCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet weak var medicineName: UILabel!
     @IBOutlet weak var timePicker: UIDatePicker!
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var unit: UILabel!
     
     weak var delegate: CalendarViewControllerDelegate?
@@ -30,17 +29,11 @@ class MedicineRecordDetailCell: UITableViewCell, UITextFieldDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        textField.keyboardType = .decimalPad
-        
-        textField.delegate = self
-        
         layoutSubviews()
         setupCell(borderColor: .gray)
         loadTimePickerDate()
         loadTextFieldDate()
-        doneButton()
         timePicker.addTarget(self, action: #selector(timePickerChanged(_:)), for: .valueChanged) // 値が変更された時のアクションを追加
-        textField.addTarget(self, action: #selector(textFieldChanged(_:)), for: .editingChanged)
     }
     
     override func layoutSubviews() {
@@ -110,29 +103,6 @@ class MedicineRecordDetailCell: UITableViewCell, UITextFieldDelegate {
         }
     }
     
-    @objc private func dismissKeyboard() {
-        if inputString.isEmpty {
-            // 空白の場合は0を代入
-            inputString = "0"
-        }
-        // 入力中の文字列を Double に変換
-        if let newValue = Double(inputString) {
-            if newValue.truncatingRemainder(dividingBy: 1) == 0 {
-                // 整数の場合は整数として保存
-                let intValue = Int(newValue)
-                textField.text = String(intValue) // 整数として表示
-                saveTextFieldDate(intValue)
-                delegate2?.didChangeTextData(for: self, newText: Double(intValue))
-            } else {
-                // 小数の場合はそのまま表示
-                textField.text = String(newValue) // 小数としてそのまま表示
-                saveTextFieldDate(Int(newValue))
-                delegate2?.didChangeTextData(for: self, newText: newValue)
-            }
-        }
-        textField.resignFirstResponder()
-    }
-    
     private func saveTextFieldDate(_ text: Int) {
         UserDefaults.standard.set(text, forKey: "savedText") // 軽量な永続ストレージ（保存）
     }
@@ -141,35 +111,19 @@ class MedicineRecordDetailCell: UITableViewCell, UITextFieldDelegate {
         if let savedText = UserDefaults.standard.value(forKey: "savedText") as? Double {
             // 保存されたテキストを表示形式に応じて整える
             if savedText == Double(Int(savedText)) {
-                textField.text = "\(Int(savedText))" // 整数として表示
+                label.text = "\(Int(savedText))" // 整数として表示
             } else {
-                textField.text = "\(savedText)" // 小数としてそのまま表示
+                label.text = "\(savedText)" // 小数としてそのまま表示
             }
         } else {
-            textField.text = "0" // 保存されたテキストがない場合は0を表示
+            label.text = "0" // 保存されたテキストがない場合は0を表示
         }
     }
     
-    private func doneButton() {
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        let closeButton = UIBarButtonItem(title: "閉じる", style: .done, target: self, action: #selector(dismissKeyboard))
-        toolbar.items = [closeButton]
-        textField.inputAccessoryView = toolbar
-    }
-    
-    func configure(medicineName: String, timePicker: Date, text: String, unit: String) {
+    func configure(medicineName: String, timePicker: Date, label: String, unit: String) {
         self.medicineName.text = medicineName
         self.unit.text = unit
         self.timePicker.date = timePicker
-        if let doseValue = Double(text) {
-            if doseValue.truncatingRemainder(dividingBy: 1) == 0 {
-                // 整数の場合は Int に変換して表示
-                self.textField.text = String(Int(doseValue))
-            } else {
-                // 小数の場合はそのまま表示
-                self.textField.text = String(doseValue) // Double 型として表示
-            }
-        }
+        self.label.text = label // textFieldをtextLabelに変更
     }
 }

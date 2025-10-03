@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,34 +35,32 @@
                             <constraint firstAttribute="height" constant="34" id="onh-uu-NwO"/>
                         </constraints>
                     </datePicker>
-                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P1f-Ef-kgp">
-                        <rect key="frame" x="250" y="5" width="32" height="34"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="34" id="Rmh-OI-p9y"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbt-co-ZhY">
+                        <rect key="frame" x="238" y="11.666666666666664" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="gbt-co-ZhY" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="6eP-Gk-tdd"/>
                     <constraint firstItem="0SI-ks-qnw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="LwZ-D6-bMN"/>
                     <constraint firstAttribute="trailing" secondItem="XbC-NH-dPF" secondAttribute="trailing" constant="5" id="SGA-ze-MXW"/>
-                    <constraint firstItem="P1f-Ef-kgp" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Z8i-91-jeT"/>
+                    <constraint firstItem="XbC-NH-dPF" firstAttribute="leading" secondItem="gbt-co-ZhY" secondAttribute="trailing" constant="3" id="XD3-wH-f0U"/>
                     <constraint firstItem="0SI-ks-qnw" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="bw8-bt-q7t"/>
                     <constraint firstItem="Hi7-cd-EQ8" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="sKb-BX-huB"/>
                     <constraint firstItem="XbC-NH-dPF" firstAttribute="centerY" secondItem="Hi7-cd-EQ8" secondAttribute="centerY" id="tRg-Pa-rBq"/>
                     <constraint firstItem="Hi7-cd-EQ8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="uci-w1-79R"/>
-                    <constraint firstItem="XbC-NH-dPF" firstAttribute="leading" secondItem="P1f-Ef-kgp" secondAttribute="trailing" constant="1" id="zgW-lo-Hfc"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="label" destination="gbt-co-ZhY" id="6nL-4s-X0A"/>
                 <outlet property="medicineName" destination="Hi7-cd-EQ8" id="qgs-M0-tYp"/>
-                <outlet property="textField" destination="P1f-Ef-kgp" id="L9O-wt-W2z"/>
                 <outlet property="timePicker" destination="0SI-ks-qnw" id="J2a-ra-NH9"/>
                 <outlet property="unit" destination="XbC-NH-dPF" id="p4C-wO-UPk"/>
             </connections>
-            <point key="canvasLocation" x="129.7709923664122" y="-33.098591549295776"/>
+            <point key="canvasLocation" x="125" y="-32"/>
         </tableViewCell>
     </objects>
 </document>

@@ -46,6 +46,8 @@ class CalendarViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        tableView.showsVerticalScrollIndicator = false
+        
         tableView.register(UINib(nibName: "CalendarDateCell", bundle: nil), forCellReuseIdentifier: "CalendarDateCell")
         tableView.register(UINib(nibName: "PhysicalConditionCell", bundle: nil), forCellReuseIdentifier: "PhysicalConditionCell")
         tableView.register(UINib(nibName: "FecesConditionCell", bundle: nil), forCellReuseIdentifier: "FecesConditionCell")
@@ -64,10 +66,19 @@ class CalendarViewController: UIViewController {
         setupCalendarScope()
         indexes.removeAll()
         tableView.reloadData()
+        }
+        // UserDefaults から色を読み込む
+        private func loadColorFromUserDefaults() -> UIColor? {
+            if let colorData = UserDefaults.standard.data(forKey: "savedColor"),
+               let color = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(colorData) as? UIColor {
+                return color
+            }
+            return nil
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
         loadCalendars()
         loadMedicinesData()
         calendar.reloadData()
@@ -80,9 +91,11 @@ class CalendarViewController: UIViewController {
             if savedScope == "month" {
                 calendar.setScope(.month, animated: false)
                 changeButton.setTitle("週表示", for: .normal)
+//                calendar.firstWeekday = 2
             } else {
                 calendar.setScope(.week, animated: false)
                 changeButton.setTitle("月表示", for: .normal)
+//                calendar.firstWeekday = 2
             }
         } else {
             // デフォルトの表示形式を月表示に設定
@@ -90,7 +103,10 @@ class CalendarViewController: UIViewController {
             changeButton.setTitle("週表示", for: .normal)
         }
     }
-    
+//    func weekStart() {
+//        calendar.firstWeekday = 2
+//
+//    }
     private func loadCalendars() {
         let realm = try! Realm()
         let calendars = realm.objects(CalendarDataModel.self)
@@ -355,7 +371,7 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource  {
                 
                 medicineRecordDetailCell.medicineName.text = medicine.medicineName
                 medicineRecordDetailCell.unit.text = medicine.unit
-                medicineRecordDetailCell.textField.text = "\(medicine.textField)"
+                medicineRecordDetailCell.label.text = "\(medicine.label)"
                 
                 let dateFormatter = DateFormatter()
                 dateFormatter.locale = Locale(identifier: "ja_JP")
@@ -377,9 +393,9 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource  {
                 let sampleIndex = SampleIndex(medicineRecordIndex: medicineRecordIndex, tableViewIndex: indexPath.row)
                 indexes.append(sampleIndex)
                 // configure メソッドでセルにデータを設定
-                medicineRecordDetailCell.configure(medicineName: medicine.medicineName, timePicker: timePickerDate, text: String(medicine.textField), unit: medicine.unit)
+                medicineRecordDetailCell.configure(medicineName: medicine.medicineName, timePicker: timePickerDate, label: medicine.label, unit: medicine.unit)
                 // 色の設定
-                    medicineRecordDetailCell.setupCell(borderColor: UIColor.systemTeal)
+                medicineRecordDetailCell.setupCell(borderColor: UIColor.systemTeal)
             }
             return medicineRecordDetailCell
         } else if identifier == "MemoCell" {
@@ -410,6 +426,9 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource  {
         }
         let startingRow = 5
         let lastRow = tableView.numberOfRows(inSection: indexPath.section) - 1 // 最後のインデックス
+        if indexPath.row == lastRow {
+            return 200
+        }
         
         if indexPath.row >= startingRow && indexPath.row <= lastRow {
             return 50
@@ -456,7 +475,6 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource  {
         if let index = medicineRecordIndices.firstIndex(where: { $0 == indexPath.row }) {
             let medicineRecord = medicineRecordDataModel[index]
             updateMedicineDataModel(medicineRecord, isDelete: true)
-
             let realm = try! Realm()
             if index < medicineRecordDataModel.count {
                 try! realm.write {
@@ -514,27 +532,6 @@ extension CalendarViewController: FecesDetailCellDelegate, AdditionButtonCellDel
         }
     }
     
-    func didChangeTextData(for cell: MedicineRecordDetailCell, newText: Double) {
-        // tableViewからセルのindexPathを取得
-        guard let indexPath = tableView.indexPath(for: cell) else { return }
-        let sampleIndex = indexes.first { $0.tableViewIndex == indexPath.row }
-        // インデックスの範囲チェック
-        if let sampleIndex = sampleIndex, sampleIndex.medicineRecordIndex - 1 < medicineRecordDataModel.count {
-            let medicine = medicineRecordDataModel[sampleIndex.medicineRecordIndex - 1]
-            let realm = try! Realm()
-            
-            try! realm.write {
-                // textデータを更新
-                medicine.textField = Double(newText)
-                realm.add(medicine, update: .modified)
-            }
-            // セルの表示を更新（セルの位置が変わらないように）
-            if let updatedCell = tableView.cellForRow(at: indexPath) as? MedicineRecordDetailCell {
-                updatedCell.textField.text = "\(newText)"
-            }
-        }
-    }
-    
     func didSaveMedicineRecord(_ record: MedicineRecordDataModel) {
         // 既存データと重複しないようにチェック
         if !medicineRecordDataModel.contains(where: { $0.medicineName == record.medicineName && $0.timePicker == record.timePicker }) {
@@ -542,6 +539,8 @@ extension CalendarViewController: FecesDetailCellDelegate, AdditionButtonCellDel
             
             let newIndex = medicineRecordDataModel.count - 1
             let medicineRecordCount = medicineRecordDataModel.count
+            updateMedicineDataModel(record, isDelete: false)
+            
             updateMedicineDataModel(record, isDelete: false)
             
             updateTableViewCells(with: medicineRecordCount)
@@ -552,23 +551,28 @@ extension CalendarViewController: FecesDetailCellDelegate, AdditionButtonCellDel
     
     func updateMedicineDataModel(_ record: MedicineRecordDataModel, isDelete: Bool) {
         let realm = try! Realm()
-        // `MedicineDataModel`の対象レコードを取得
-        if let targetEmployee = realm.objects(MedicineDataModel.self).filter("id == %@", record.id).first {
+        // MedicineDataModelの対象レコードを取得
+        if let targetEmployee = realm.objects(MedicineDataModel.self).filter("id == %@", record.medicineModelId).first {
+            // stockが0の場合は計算をスキップ
+            if targetEmployee.stock == 0 {
+                return
+            }
+            
             do {
                 try realm.write {
-                    // stockの更新処理
-                    if isDelete {
-                        targetEmployee.stock += record.textField
-                    } else {
-                        targetEmployee.stock -= record.textField
+                    // labelValueが数値かどうかを確認
+                    if let labelValue = Double(record.label) {
+                        // stock の更新処理
+                        if isDelete {
+                            targetEmployee.stock += labelValue
+                        } else {
+                            targetEmployee.stock -= labelValue
+                        }
                     }
-                    
                 }
             } catch {
-                print("Error: \(error)")
+                print("該当するレコードが見つかりません: \(record.medicineModelId)")
             }
-        } else {
-            print("該当するレコードが見つかりません: \(record.id)")
         }
     }
     

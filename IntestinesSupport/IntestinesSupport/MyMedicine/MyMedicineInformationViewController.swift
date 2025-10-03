@@ -33,7 +33,7 @@ class MedicineDataModel: Object {
     }
 }
 class MyMedicineInformation: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, CalendarViewControllerDelegate {
-    
+    @IBOutlet weak var medicineNameLabel: UILabel!
     @IBOutlet weak var medicineName: UITextField!
     @IBOutlet weak var doseNumber: UITextField!
     @IBOutlet weak var stock: UITextField!
@@ -81,7 +81,7 @@ class MyMedicineInformation: UIViewController, UITextFieldDelegate, UITextViewDe
         memo.textContainer.lineBreakMode = .byWordWrapping
         memo.sizeToFit()
         
-        memo.layer.borderColor = UIColor(red: 0.2, green: 0.7, blue: 0.5, alpha: 1.0).cgColor
+        memo.layer.borderColor = UIColor.systemGray.withAlphaComponent(0.2).cgColor
         
         memo.layer.borderWidth = 1.0
         // textFieldに収まるようにする
@@ -116,6 +116,7 @@ class MyMedicineInformation: UIViewController, UITextFieldDelegate, UITextViewDe
         defaultDisplay()
         updateDeleteButtonState()
         displayMedicineData()
+//        customLabel()
         
         MyMedicines.loadPickerData() // データを読み込む
         pickerView2.reloadAllComponents() // pickerView を更新
@@ -587,4 +588,31 @@ class MyMedicineInformation: UIViewController, UITextFieldDelegate, UITextViewDe
     func saveCalendarData(_ calendar: CalendarDataModel) {
         // 使用しない
     }
+//    private func customLabel() {
+//        // 背景ビューの作成
+//        let backgroundView = UIView()
+//        backgroundView.backgroundColor = .red  // 好みの色に変更してください
+//        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        // 背景ビューのサイズや位置を数値で管理
+//                let backgroundWidth: CGFloat = 100    // 背景ビューの幅
+//                let backgroundHeight: CGFloat = 15    // 背景ビューの高さ
+//                let verticalSpacing: CGFloat = -20     // 背景ビューの`medicineLabel`からの縦の間隔
+//
+//                // medicineLabelの背後に配置
+//                view.insertSubview(backgroundView, belowSubview: medicineNameLabel)
+//                
+//                // Auto Layout制約の設定
+//                NSLayoutConstraint.activate([
+//                    // 幅と高さを数値で指定
+//                    backgroundView.widthAnchor.constraint(equalToConstant: backgroundWidth),
+//                    backgroundView.heightAnchor.constraint(equalToConstant: backgroundHeight),
+//                    
+//                    // 背景ビューの水平方向の位置を`medicineLabel`に合わせる
+//                    backgroundView.centerXAnchor.constraint(equalTo: medicineNameLabel.centerXAnchor),
+//                    
+//                    // 背景ビューの位置を`medicineLabel`の下に合わせて、間隔を指定
+//                    backgroundView.topAnchor.constraint(equalTo: medicineNameLabel.bottomAnchor, constant: verticalSpacing)
+//                ])
+//    }
 }

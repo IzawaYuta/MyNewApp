@@ -68,6 +68,27 @@
 		A64AAC7D2C7DFB0300AE04C1 /* MedicineAdditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64AAC7C2C7DFB0300AE04C1 /* MedicineAdditionViewController.swift */; };
 		A64AAC812C7EB97700AE04C1 /* MedicineAdditionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64AAC7F2C7EB97700AE04C1 /* MedicineAdditionTableViewCell.swift */; };
 		A64AAC822C7EB97700AE04C1 /* MedicineAdditionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64AAC802C7EB97700AE04C1 /* MedicineAdditionTableViewCell.xib */; };
+		A655667F2D76890C0097AE2E /* Empty1TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A655667E2D76890C0097AE2E /* Empty1TableViewCell.xib */; };
+		A65566802D76890C0097AE2E /* Empty1TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655667D2D76890C0097AE2E /* Empty1TableViewCell.swift */; };
+		A65566832D7689880097AE2E /* Empty2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A65566822D7689880097AE2E /* Empty2TableViewCell.xib */; };
+		A65566842D7689880097AE2E /* Empty2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65566812D7689880097AE2E /* Empty2TableViewCell.swift */; };
+		A65566892D7689A50097AE2E /* Empty3TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A65566882D7689A50097AE2E /* Empty3TableViewCell.xib */; };
+		A655668A2D7689A50097AE2E /* Empty3TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65566872D7689A50097AE2E /* Empty3TableViewCell.swift */; };
+		A689A9D22CBD28E800039F37 /* SupportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A689A9D12CBD28E800039F37 /* SupportTableViewCell.xib */; };
+		A689A9D32CBD28E800039F37 /* SupportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A689A9D02CBD28E800039F37 /* SupportTableViewCell.swift */; };
+		A689A9D52CBD294200039F37 /* SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A689A9D42CBD294200039F37 /* SupportViewController.swift */; };
+		A689A9DC2CBE873F00039F37 /* PrivacyPolicyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A689A9DB2CBE873F00039F37 /* PrivacyPolicyTableViewCell.xib */; };
+		A689A9DD2CBE873F00039F37 /* PrivacyPolicyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A689A9DA2CBE873F00039F37 /* PrivacyPolicyTableViewCell.swift */; };
+		A689A9E02CBF7C9000039F37 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A689A9DF2CBF7C9000039F37 /* GraphViewController.swift */; };
+		A689A9F42CBFD8F200039F37 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A689A9F22CBFD8F200039F37 /* ColorTableViewCell.swift */; };
+		A689A9F52CBFD8F200039F37 /* ColorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A689A9F32CBFD8F200039F37 /* ColorTableViewCell.xib */; };
+		A6C955E22D4C98C300056F0B /* AllData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C955E12D4C98C000056F0B /* AllData.swift */; };
+		A6C956382D53932300056F0B /* AllDataCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C956372D53930600056F0B /* AllDataCalendar.swift */; };
+		A6CE3AD52D68B5AB00E06D23 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CE3AD42D68B5AB00E06D23 /* UserNotifications.framework */; };
+		A6CE3AD72D68B5B800E06D23 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CE3AD62D68B5B800E06D23 /* UserNotificationsUI.framework */; };
+		A6CE3ADE2D69EDC600E06D23 /* NotificationSettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6CE3ADD2D69EDC600E06D23 /* NotificationSettingsTableViewCell.xib */; };
+		A6CE3ADF2D69EDC600E06D23 /* NotificationSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CE3ADC2D69EDC600E06D23 /* NotificationSettingsTableViewCell.swift */; };
+		A6CE3AED2D6AB52B00E06D23 /* PracticePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CE3AEC2D6AB51000E06D23 /* PracticePage.swift */; };
 		ED0FE989D657E8FADDF3BE80 /* Pods_IntestinesSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821BD2A208DED6BC34BAAE2E /* Pods_IntestinesSupport.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +108,19 @@
 			remoteInfo = IntestinesSupport;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A6C955F92D520A1D00056F0B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		467596D2228F4201B438C9FA /* Pods-IntestinesSupport-IntestinesSupportUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntestinesSupport-IntestinesSupportUITests.release.xcconfig"; path = "Target Support Files/Pods-IntestinesSupport-IntestinesSupportUITests/Pods-IntestinesSupport-IntestinesSupportUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +192,29 @@
 		A64AAC7C2C7DFB0300AE04C1 /* MedicineAdditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineAdditionViewController.swift; sourceTree = "<group>"; };
 		A64AAC7F2C7EB97700AE04C1 /* MedicineAdditionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineAdditionTableViewCell.swift; sourceTree = "<group>"; };
 		A64AAC802C7EB97700AE04C1 /* MedicineAdditionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineAdditionTableViewCell.xib; sourceTree = "<group>"; };
+		A655667D2D76890C0097AE2E /* Empty1TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty1TableViewCell.swift; sourceTree = "<group>"; };
+		A655667E2D76890C0097AE2E /* Empty1TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Empty1TableViewCell.xib; sourceTree = "<group>"; };
+		A65566812D7689880097AE2E /* Empty2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty2TableViewCell.swift; sourceTree = "<group>"; };
+		A65566822D7689880097AE2E /* Empty2TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Empty2TableViewCell.xib; sourceTree = "<group>"; };
+		A65566872D7689A50097AE2E /* Empty3TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty3TableViewCell.swift; sourceTree = "<group>"; };
+		A65566882D7689A50097AE2E /* Empty3TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Empty3TableViewCell.xib; sourceTree = "<group>"; };
+		A689A9D02CBD28E800039F37 /* SupportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportTableViewCell.swift; sourceTree = "<group>"; };
+		A689A9D12CBD28E800039F37 /* SupportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupportTableViewCell.xib; sourceTree = "<group>"; };
+		A689A9D42CBD294200039F37 /* SupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportViewController.swift; sourceTree = "<group>"; };
+		A689A9DA2CBE873F00039F37 /* PrivacyPolicyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyTableViewCell.swift; sourceTree = "<group>"; };
+		A689A9DB2CBE873F00039F37 /* PrivacyPolicyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrivacyPolicyTableViewCell.xib; sourceTree = "<group>"; };
+		A689A9DF2CBF7C9000039F37 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		A689A9F22CBFD8F200039F37 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
+		A689A9F32CBFD8F200039F37 /* ColorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorTableViewCell.xib; sourceTree = "<group>"; };
+		A6C955E12D4C98C000056F0B /* AllData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllData.swift; sourceTree = "<group>"; };
+		A6C955E82D520A1B00056F0B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		A6C955EA2D520A1B00056F0B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		A6C956372D53930600056F0B /* AllDataCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDataCalendar.swift; sourceTree = "<group>"; };
+		A6CE3AD42D68B5AB00E06D23 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		A6CE3AD62D68B5B800E06D23 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		A6CE3ADC2D69EDC600E06D23 /* NotificationSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsTableViewCell.swift; sourceTree = "<group>"; };
+		A6CE3ADD2D69EDC600E06D23 /* NotificationSettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationSettingsTableViewCell.xib; sourceTree = "<group>"; };
+		A6CE3AEC2D6AB51000E06D23 /* PracticePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticePage.swift; sourceTree = "<group>"; };
 		B1FC26A613D5492A6A92A954 /* Pods-IntestinesSupportTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntestinesSupportTests.release.xcconfig"; path = "Target Support Files/Pods-IntestinesSupportTests/Pods-IntestinesSupportTests.release.xcconfig"; sourceTree = "<group>"; };
 		C6BAB30AA22CD6F747063D5A /* Pods_IntestinesSupport_IntestinesSupportUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntestinesSupport_IntestinesSupportUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2E464BD7D4F2F142C45DAD /* Pods_IntestinesSupportTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntestinesSupportTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +225,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6CE3AD72D68B5B800E06D23 /* UserNotificationsUI.framework in Frameworks */,
+				A6CE3AD52D68B5AB00E06D23 /* UserNotifications.framework in Frameworks */,
 				ED0FE989D657E8FADDF3BE80 /* Pods_IntestinesSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,9 +266,13 @@
 		9F22DB1F9C67FA258BCBAE4C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A6CE3AD62D68B5B800E06D23 /* UserNotificationsUI.framework */,
+				A6CE3AD42D68B5AB00E06D23 /* UserNotifications.framework */,
 				821BD2A208DED6BC34BAAE2E /* Pods_IntestinesSupport.framework */,
 				C6BAB30AA22CD6F747063D5A /* Pods_IntestinesSupport_IntestinesSupportUITests.framework */,
 				CE2E464BD7D4F2F142C45DAD /* Pods_IntestinesSupportTests.framework */,
+				A6C955E82D520A1B00056F0B /* WidgetKit.framework */,
+				A6C955EA2D520A1B00056F0B /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -241,11 +304,14 @@
 			children = (
 				A62297DE2C341E7F0099F425 /* AppDelegate.swift */,
 				A62297E02C341E7F0099F425 /* SceneDelegate.swift */,
+				A62298182C3825A50099F425 /* TabViewController.swift */,
 				A62297E42C341E7F0099F425 /* Main.storyboard */,
+				A6CE3AEC2D6AB51000E06D23 /* PracticePage.swift */,
 				A64AAC242C4145A600AE04C1 /* CalendarRecord */,
+				A6C956372D53930600056F0B /* AllDataCalendar.swift */,
 				A64AAC312C44F58200AE04C1 /* MyMedicine */,
 				A64AAC452C4D230F00AE04C1 /* Certificate */,
-				A62298182C3825A50099F425 /* TabViewController.swift */,
+				A689A9CB2CBD26FD00039F37 /* Support */,
 				A62297E72C341E810099F425 /* Assets.xcassets */,
 				A62297E92C341E810099F425 /* LaunchScreen.storyboard */,
 				A62297EC2C341E810099F425 /* Info.plist */,
@@ -295,6 +361,7 @@
 				A64AAC262C4146BF00AE04C1 /* MedicineRecordDetailCell.xib */,
 				A64AAC292C41556300AE04C1 /* MemoCell.swift */,
 				A64AAC2A2C41556300AE04C1 /* MemoCell.xib */,
+				A689A9DE2CBF7C1A00039F37 /* Graph */,
 			);
 			path = CalendarRecord;
 			sourceTree = "<group>";
@@ -357,6 +424,45 @@
 			path = MedicineAddition;
 			sourceTree = "<group>";
 		};
+		A689A9CB2CBD26FD00039F37 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				A689A9D42CBD294200039F37 /* SupportViewController.swift */,
+				A6CE3AEE2D6C35FA00E06D23 /* TableViewCell */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		A689A9DE2CBF7C1A00039F37 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				A689A9DF2CBF7C9000039F37 /* GraphViewController.swift */,
+				A6C955E12D4C98C000056F0B /* AllData.swift */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
+		A6CE3AEE2D6C35FA00E06D23 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A655667D2D76890C0097AE2E /* Empty1TableViewCell.swift */,
+				A655667E2D76890C0097AE2E /* Empty1TableViewCell.xib */,
+				A689A9F22CBFD8F200039F37 /* ColorTableViewCell.swift */,
+				A689A9F32CBFD8F200039F37 /* ColorTableViewCell.xib */,
+				A65566812D7689880097AE2E /* Empty2TableViewCell.swift */,
+				A65566822D7689880097AE2E /* Empty2TableViewCell.xib */,
+				A6CE3ADC2D69EDC600E06D23 /* NotificationSettingsTableViewCell.swift */,
+				A6CE3ADD2D69EDC600E06D23 /* NotificationSettingsTableViewCell.xib */,
+				A65566872D7689A50097AE2E /* Empty3TableViewCell.swift */,
+				A65566882D7689A50097AE2E /* Empty3TableViewCell.xib */,
+				A689A9D02CBD28E800039F37 /* SupportTableViewCell.swift */,
+				A689A9D12CBD28E800039F37 /* SupportTableViewCell.xib */,
+				A689A9DA2CBE873F00039F37 /* PrivacyPolicyTableViewCell.swift */,
+				A689A9DB2CBE873F00039F37 /* PrivacyPolicyTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -369,6 +475,7 @@
 				A62297D82C341E7F0099F425 /* Frameworks */,
 				A62297D92C341E7F0099F425 /* Resources */,
 				C84E71CC4433A5F4946827BF /* [CP] Embed Pods Frameworks */,
+				A6C955F92D520A1D00056F0B /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -425,7 +532,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1540;
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					A62297DA2C341E7F0099F425 = {
@@ -467,6 +574,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A64AAC582C4E716300AE04C1 /* PeriodCell.xib in Resources */,
+				A655667F2D76890C0097AE2E /* Empty1TableViewCell.xib in Resources */,
 				A64AAC662C6239DF00AE04C1 /* MedicineTableViewCell.xib in Resources */,
 				A64AAC2F2C42B87800AE04C1 /* FecesDetailCell.xib in Resources */,
 				A62297E82C341E810099F425 /* Assets.xcassets in Resources */,
@@ -474,19 +582,25 @@
 				A64AAC202C41455500AE04C1 /* AdditionButtonCell.xib in Resources */,
 				A64AAC502C4E713A00AE04C1 /* HierarchyClassificationCell.xib in Resources */,
 				A62297EB2C341E810099F425 /* Base in Resources */,
+				A6CE3ADE2D69EDC600E06D23 /* NotificationSettingsTableViewCell.xib in Resources */,
 				A64AAC3C2C4BCDBF00AE04C1 /* EmptyStateCell.xib in Resources */,
 				A64AAC782C6C249D00AE04C1 /* FecesRecordTableViewCell.xib in Resources */,
 				A64AAC542C4E714D00AE04C1 /* DeadlineCell.xib in Resources */,
 				A64AAC182C3FFD4300AE04C1 /* CalendarDateCell.xib in Resources */,
+				A65566832D7689880097AE2E /* Empty2TableViewCell.xib in Resources */,
 				A64AAC5C2C4E718200AE04C1 /* PlusButtonCell.xib in Resources */,
 				A64AAC482C4D232E00AE04C1 /* ApplicationClassificationCell.xib in Resources */,
 				A64AAC272C4146BF00AE04C1 /* MedicineRecordDetailCell.xib in Resources */,
+				A689A9F52CBFD8F200039F37 /* ColorTableViewCell.xib in Resources */,
 				A64AAC822C7EB97700AE04C1 /* MedicineAdditionTableViewCell.xib in Resources */,
+				A689A9DC2CBE873F00039F37 /* PrivacyPolicyTableViewCell.xib in Resources */,
+				A65566892D7689A50097AE2E /* Empty3TableViewCell.xib in Resources */,
 				A64AAC362C4683AB00AE04C1 /* PhysicalConditionCell.xib in Resources */,
 				A64AAC2B2C41556300AE04C1 /* MemoCell.xib in Resources */,
 				A64AAC402C4BD06200AE04C1 /* MedicineEmptyStateCell.xib in Resources */,
 				A64AAC1C2C4144F700AE04C1 /* FecesConditionCell.xib in Resources */,
 				A62297E62C341E7F0099F425 /* Base in Resources */,
+				A689A9D22CBD28E800039F37 /* SupportTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +729,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A64AAC592C4E716300AE04C1 /* PeriodCell.swift in Sources */,
+				A65566802D76890C0097AE2E /* Empty1TableViewCell.swift in Sources */,
+				A689A9D32CBD28E800039F37 /* SupportTableViewCell.swift in Sources */,
 				A64AAC792C6C249D00AE04C1 /* FecesRecordTableViewCell.swift in Sources */,
 				A64AAC432C4BD47600AE04C1 /* History.swift in Sources */,
 				A64AAC5D2C4E718200AE04C1 /* PlusButtonCell.swift in Sources */,
@@ -622,24 +738,32 @@
 				A62298132C358A5A0099F425 /* CertificateViewController.swift in Sources */,
 				A64AAC192C3FFD4300AE04C1 /* CalendarDateCell.swift in Sources */,
 				A622980F2C341F0E0099F425 /* CalendarViewController.swift in Sources */,
+				A65566842D7689880097AE2E /* Empty2TableViewCell.swift in Sources */,
 				A64AAC412C4BD06200AE04C1 /* MedicineEmptyStateCell.swift in Sources */,
 				A64AAC1D2C4144F700AE04C1 /* FecesConditionCell.swift in Sources */,
 				A64AAC632C6098DB00AE04C1 /* CustomTextField.swift in Sources */,
 				A64AAC752C6B797200AE04C1 /* Calendars.swift in Sources */,
 				A64AAC552C4E714D00AE04C1 /* DeadlineCell.swift in Sources */,
+				A6CE3AED2D6AB52B00E06D23 /* PracticePage.swift in Sources */,
 				A64AAC7D2C7DFB0300AE04C1 /* MedicineAdditionViewController.swift in Sources */,
 				A64AAC812C7EB97700AE04C1 /* MedicineAdditionTableViewCell.swift in Sources */,
 				A64AAC732C6B76F900AE04C1 /* CalendarDataModel.swift in Sources */,
+				A689A9D52CBD294200039F37 /* SupportViewController.swift in Sources */,
 				A64AAC392C4A878700AE04C1 /* FecesRecord .swift in Sources */,
 				A64AAC372C4683AB00AE04C1 /* PhysicalConditionCell.swift in Sources */,
 				A64AAC6B2C6245D600AE04C1 /* MyMedicines.swift in Sources */,
+				A689A9E02CBF7C9000039F37 /* GraphViewController.swift in Sources */,
+				A6C955E22D4C98C300056F0B /* AllData.swift in Sources */,
 				A62297DF2C341E7F0099F425 /* AppDelegate.swift in Sources */,
+				A655668A2D7689A50097AE2E /* Empty3TableViewCell.swift in Sources */,
 				A64AAC282C4146BF00AE04C1 /* MedicineRecordDetailCell.swift in Sources */,
 				A64AAC2C2C41556300AE04C1 /* MemoCell.swift in Sources */,
 				A62297E12C341E7F0099F425 /* SceneDelegate.swift in Sources */,
 				A62298192C3825A50099F425 /* TabViewController.swift in Sources */,
 				A64AAC712C695A3600AE04C1 /* Certificates.swift in Sources */,
 				A64AAC7B2C6E21E900AE04C1 /* Date+Extension.swift in Sources */,
+				A689A9DD2CBE873F00039F37 /* PrivacyPolicyTableViewCell.swift in Sources */,
+				A6C956382D53932300056F0B /* AllDataCalendar.swift in Sources */,
 				A64AAC6F2C68E7ED00AE04C1 /* CertificateDataModel.swift in Sources */,
 				A64AAC4D2C4E711800AE04C1 /* MoneyCell.swift in Sources */,
 				A64AAC332C44F5A500AE04C1 /* MyMedicineInformationViewController.swift in Sources */,
@@ -649,6 +773,8 @@
 				A64AAC302C42B87800AE04C1 /* FecesDetailCell.swift in Sources */,
 				A64AAC3D2C4BCDBF00AE04C1 /* EmptyStateCell.swift in Sources */,
 				A64AAC672C6239DF00AE04C1 /* MedicineTableViewCell.swift in Sources */,
+				A6CE3ADF2D69EDC600E06D23 /* NotificationSettingsTableViewCell.swift in Sources */,
+				A689A9F42CBFD8F200039F37 /* ColorTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -709,6 +835,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -756,7 +883,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -772,6 +899,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -813,7 +941,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -829,29 +957,39 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development: yuta izawa (224D8UD75X)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MWZL7CC4LD;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IntestinesSupport/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "腸サポート";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dotinstall.IntestinesSupport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = Colon;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -861,29 +999,39 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development: yuta izawa (224D8UD75X)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MWZL7CC4LD;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IntestinesSupport/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "腸サポート";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dotinstall.IntestinesSupport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = Colon;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -891,7 +1039,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7328FF37E08947606FE2D580 /* Pods-IntestinesSupportTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -911,7 +1058,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B1FC26A613D5492A6A92A954 /* Pods-IntestinesSupportTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -931,7 +1077,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9DBDAF44E1A8BF8DA17A6C4C /* Pods-IntestinesSupport-IntestinesSupportUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -949,7 +1094,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 467596D2228F4201B438C9FA /* Pods-IntestinesSupport-IntestinesSupportUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
