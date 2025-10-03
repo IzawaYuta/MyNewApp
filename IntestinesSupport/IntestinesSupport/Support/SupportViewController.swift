@@ -13,7 +13,7 @@ class SupportViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var tableView: UITableView!
     
-    private let tableViewCell = ["Empty1TableViewCell", "ColorTableViewCell","Empty2TableViewCell",  "NotificationSettingsTableViewCell", "Empty3TableViewCell", "SupportTableViewCell", "PrivacyPolicyTableViewCell"]
+    private let tableViewCell = [/*"Empty1TableViewCell", "ColorTableViewCell",*/"Empty2TableViewCell",  "NotificationSettingsTableViewCell", "Empty3TableViewCell", "SupportTableViewCell", "PrivacyPolicyTableViewCell"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
