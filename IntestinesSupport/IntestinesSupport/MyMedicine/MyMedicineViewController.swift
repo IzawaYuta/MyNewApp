@@ -24,6 +24,7 @@ class MyMedicineViewController: UIViewController, UITableViewDelegate, UITableVi
         
         navigationController?.navigationBar.isHidden = true
         
+        tableView.register(UINib(nibName: "MedicineEmptyTableViewCell", bundle: nil), forCellReuseIdentifier: "MedicineEmptyTableViewCell")
         tableView.register(UINib(nibName: "MedicineTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
         loadMedicines()
     }
@@ -42,32 +43,47 @@ class MyMedicineViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     // 行数を返す
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return medicineDataModel.filter { !$0.isInvalidated }.count
+//        return medicineDataModel.filter { !$0.isInvalidated }.count
+        if medicineDataModel.isEmpty {
+            return 1
+        } else {
+            return medicineDataModel.filter { !$0.isInvalidated }.count
+        }
     }
     // 各行の内容を設定
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! MedicineTableViewCell
-        let filteredData = medicineDataModel.filter { !$0.isInvalidated }
-        
-        guard indexPath.row < filteredData.count else {
-            return UITableViewCell()
-        }
-        let medicine = filteredData[indexPath.row]
-        // セルの設定
-        cell.medicineNameLabel.text = medicine.medicineName
-        if medicine.stock == Double(Int(medicine.stock)) {
-            cell.stockNumberLabel.text = "\(Int(medicine.stock))" // ０の場合整数として表示
+        if medicineDataModel.isEmpty {
+            let emptyCell = tableView.dequeueReusableCell(withIdentifier: "MedicineEmptyTableViewCell", for: indexPath) as! MedicineEmptyTableViewCell
+            emptyCell.emptyMessageLabel.text = "お薬を追加してください"
+            emptyCell.emptyMessageLabel.textColor = .gray
+            emptyCell.emptyMessageLabel.textAlignment = .center
+            emptyCell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+            emptyCell.selectionStyle = .none
+            return emptyCell
         } else {
-            cell.stockNumberLabel.text = "\(medicine.stock)" // 小数としてそのまま表示
+            let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! MedicineTableViewCell
+            let filteredData = medicineDataModel.filter { !$0.isInvalidated }
+            
+            guard indexPath.row < filteredData.count else {
+                return UITableViewCell()
+            }
+            let medicine = filteredData[indexPath.row]
+            // セルの設定
+            cell.medicineNameLabel.text = medicine.medicineName
+            if medicine.stock == Double(Int(medicine.stock)) {
+                cell.stockNumberLabel.text = "\(Int(medicine.stock))" // ０の場合整数として表示
+            } else {
+                cell.stockNumberLabel.text = "\(medicine.stock)" // 小数としてそのまま表示
+            }
+            cell.stockUnitLabel.text = medicine.label
+            
+            if MyMedicines.sharedPickerData2.isEmpty {
+                cell.stockUnitLabel.text = "" // ピッカーが空ならラベルを空白に
+            }
+            
+            cell.selectionStyle = .none // セル選択時の色の変化を無効化
+            return cell
         }
-        cell.stockUnitLabel.text = medicine.label
-        
-        if MyMedicines.sharedPickerData2.isEmpty {
-            cell.stockUnitLabel.text = "" // ピッカーが空ならラベルを空白に
-        }
-        
-        cell.selectionStyle = .none // セル選択時の色の変化を無効化
-        return cell
     }
     // 行の編集操作
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

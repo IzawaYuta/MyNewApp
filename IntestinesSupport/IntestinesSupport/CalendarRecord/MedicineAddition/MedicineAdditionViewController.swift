@@ -30,6 +30,7 @@ class MedicineAdditionViewController: UIViewController, UITableViewDelegate, UIT
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(UINib(nibName: "MedicineRecordEmptyTableViewCell", bundle: nil), forCellReuseIdentifier: "MedicineRecordEmptyTableViewCell")
         tableView.register(UINib(nibName: "MedicineAdditionTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
         tableView.allowsMultipleSelection = true
         loadMedicines()
@@ -44,29 +45,43 @@ class MedicineAdditionViewController: UIViewController, UITableViewDelegate, UIT
     }
     // 行図鵜を返す
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return medicineDataModel.count
+        if medicineRecordDataModel.isEmpty {
+            return 1
+        } else {
+            return medicineDataModel.count
+        }
     }
     // 各行の内容を設定
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! MedicineAdditionTableViewCell
-        let medicine = medicineDataModel[indexPath.row]
-        cell.medicineName.text = medicine.medicineName
-        cell.unitLabel.text = medicine.label
-        cell.modelId = medicine.id
-        
-        let doseNumber = medicine.doseNumber
-        // 整数の場合は Int として表示
-        if let doseInt = Int(exactly: doseNumber) {
-            cell.textField.text = "\(doseInt)"
+        if medicineDataModel.isEmpty {
+            let emptyCell = tableView.dequeueReusableCell(withIdentifier: "MedicineRecordEmptyTableViewCell", for: indexPath) as! MedicineRecordEmptyTableViewCell
+            emptyCell.medicineRecordEmptyLabel.text = "お薬を追加してください"
+            emptyCell.medicineRecordEmptyLabel.textColor = .gray
+            emptyCell.medicineRecordEmptyLabel.textAlignment = .center
+            emptyCell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+            emptyCell.selectionStyle = .none
+            return emptyCell
         } else {
-            cell.textField.text = "\(doseNumber)"
+            let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! MedicineAdditionTableViewCell
+            let medicine = medicineDataModel[indexPath.row]
+            cell.medicineName.text = medicine.medicineName
+            cell.unitLabel.text = medicine.label
+            cell.modelId = medicine.id
+            
+            let doseNumber = medicine.doseNumber
+            // 整数の場合は Int として表示
+            if let doseInt = Int(exactly: doseNumber) {
+                cell.textField.text = "\(doseInt)"
+            } else {
+                cell.textField.text = "\(doseNumber)"
+            }
+            
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+            
+            cell.selectionStyle = .none // セルを選択したときに色が変わらないようにする
+            
+            return cell
         }
-        
-        cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
-        
-        cell.selectionStyle = .none // セルを選択したときに色が変わらないようにする
-        
-        return cell
     }
     // 行が選択された時の処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

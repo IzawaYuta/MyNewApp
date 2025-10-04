@@ -357,7 +357,7 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource  {
             return additionButtonCell
         } else if identifier == "MedicineEmptyStateCell" {
             let medicineEmptyStateCell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! MedicineEmptyStateCell
-            medicineEmptyStateCell.messageLabel.text = "服用はありません"
+            medicineEmptyStateCell.messageLabel.text = "今日の服用はありません"
             medicineEmptyStateCell.messageLabel.textColor = .gray // テキストの色を薄く設定
             medicineEmptyStateCell.messageLabel.textAlignment = .center
             medicineEmptyStateCell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)

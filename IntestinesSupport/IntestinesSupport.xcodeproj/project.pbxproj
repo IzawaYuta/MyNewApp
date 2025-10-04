@@ -89,6 +89,10 @@
 		A6CE3ADE2D69EDC600E06D23 /* NotificationSettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6CE3ADD2D69EDC600E06D23 /* NotificationSettingsTableViewCell.xib */; };
 		A6CE3ADF2D69EDC600E06D23 /* NotificationSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CE3ADC2D69EDC600E06D23 /* NotificationSettingsTableViewCell.swift */; };
 		A6CE3AED2D6AB52B00E06D23 /* PracticePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CE3AEC2D6AB51000E06D23 /* PracticePage.swift */; };
+		A6E54BBB2E8FF79100C3DFA9 /* MedicineEmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E54BBA2E8FF79100C3DFA9 /* MedicineEmptyTableViewCell.xib */; };
+		A6E54BBC2E8FF79100C3DFA9 /* MedicineEmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E54BB92E8FF79100C3DFA9 /* MedicineEmptyTableViewCell.swift */; };
+		A6E54BBF2E9065BF00C3DFA9 /* MedicineRecordEmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E54BBE2E9065BF00C3DFA9 /* MedicineRecordEmptyTableViewCell.xib */; };
+		A6E54BC02E9065BF00C3DFA9 /* MedicineRecordEmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E54BBD2E9065BF00C3DFA9 /* MedicineRecordEmptyTableViewCell.swift */; };
 		ED0FE989D657E8FADDF3BE80 /* Pods_IntestinesSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821BD2A208DED6BC34BAAE2E /* Pods_IntestinesSupport.framework */; };
 /* End PBXBuildFile section */
 
@@ -216,6 +220,10 @@
 		A6CE3ADC2D69EDC600E06D23 /* NotificationSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		A6CE3ADD2D69EDC600E06D23 /* NotificationSettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationSettingsTableViewCell.xib; sourceTree = "<group>"; };
 		A6CE3AEC2D6AB51000E06D23 /* PracticePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticePage.swift; sourceTree = "<group>"; };
+		A6E54BB92E8FF79100C3DFA9 /* MedicineEmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineEmptyTableViewCell.swift; sourceTree = "<group>"; };
+		A6E54BBA2E8FF79100C3DFA9 /* MedicineEmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineEmptyTableViewCell.xib; sourceTree = "<group>"; };
+		A6E54BBD2E9065BF00C3DFA9 /* MedicineRecordEmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineRecordEmptyTableViewCell.swift; sourceTree = "<group>"; };
+		A6E54BBE2E9065BF00C3DFA9 /* MedicineRecordEmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineRecordEmptyTableViewCell.xib; sourceTree = "<group>"; };
 		B1FC26A613D5492A6A92A954 /* Pods-IntestinesSupportTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntestinesSupportTests.release.xcconfig"; path = "Target Support Files/Pods-IntestinesSupportTests/Pods-IntestinesSupportTests.release.xcconfig"; sourceTree = "<group>"; };
 		C6BAB30AA22CD6F747063D5A /* Pods_IntestinesSupport_IntestinesSupportUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntestinesSupport_IntestinesSupportUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2E464BD7D4F2F142C45DAD /* Pods_IntestinesSupportTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntestinesSupportTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -377,6 +385,8 @@
 				A64AAC622C6098DB00AE04C1 /* CustomTextField.swift */,
 				A64AAC642C6239DF00AE04C1 /* MedicineTableViewCell.swift */,
 				A64AAC652C6239DF00AE04C1 /* MedicineTableViewCell.xib */,
+				A6E54BB92E8FF79100C3DFA9 /* MedicineEmptyTableViewCell.swift */,
+				A6E54BBA2E8FF79100C3DFA9 /* MedicineEmptyTableViewCell.xib */,
 			);
 			path = MyMedicine;
 			sourceTree = "<group>";
@@ -422,6 +432,8 @@
 				A64AAC7C2C7DFB0300AE04C1 /* MedicineAdditionViewController.swift */,
 				A64AAC7F2C7EB97700AE04C1 /* MedicineAdditionTableViewCell.swift */,
 				A64AAC802C7EB97700AE04C1 /* MedicineAdditionTableViewCell.xib */,
+				A6E54BBD2E9065BF00C3DFA9 /* MedicineRecordEmptyTableViewCell.swift */,
+				A6E54BBE2E9065BF00C3DFA9 /* MedicineRecordEmptyTableViewCell.xib */,
 			);
 			path = MedicineAddition;
 			sourceTree = "<group>";
@@ -586,6 +598,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6E54BBF2E9065BF00C3DFA9 /* MedicineRecordEmptyTableViewCell.xib in Resources */,
 				A64AAC582C4E716300AE04C1 /* PeriodCell.xib in Resources */,
 				A655667F2D76890C0097AE2E /* Empty1TableViewCell.xib in Resources */,
 				A64AAC662C6239DF00AE04C1 /* MedicineTableViewCell.xib in Resources */,
@@ -599,6 +612,7 @@
 				A64AAC3C2C4BCDBF00AE04C1 /* EmptyStateCell.xib in Resources */,
 				A64AAC782C6C249D00AE04C1 /* FecesRecordTableViewCell.xib in Resources */,
 				A64AAC542C4E714D00AE04C1 /* DeadlineCell.xib in Resources */,
+				A6E54BBB2E8FF79100C3DFA9 /* MedicineEmptyTableViewCell.xib in Resources */,
 				A64AAC182C3FFD4300AE04C1 /* CalendarDateCell.xib in Resources */,
 				A65566832D7689880097AE2E /* Empty2TableViewCell.xib in Resources */,
 				A64AAC5C2C4E718200AE04C1 /* PlusButtonCell.xib in Resources */,
@@ -708,9 +722,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-IntestinesSupport-IntestinesSupportUITests/Pods-IntestinesSupport-IntestinesSupportUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-IntestinesSupport-IntestinesSupportUITests/Pods-IntestinesSupport-IntestinesSupportUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -725,9 +743,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-IntestinesSupport/Pods-IntestinesSupport-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-IntestinesSupport/Pods-IntestinesSupport-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -759,6 +781,7 @@
 				A64AAC552C4E714D00AE04C1 /* DeadlineCell.swift in Sources */,
 				A6CE3AED2D6AB52B00E06D23 /* PracticePage.swift in Sources */,
 				A64AAC7D2C7DFB0300AE04C1 /* MedicineAdditionViewController.swift in Sources */,
+				A6E54BC02E9065BF00C3DFA9 /* MedicineRecordEmptyTableViewCell.swift in Sources */,
 				A64AAC812C7EB97700AE04C1 /* MedicineAdditionTableViewCell.swift in Sources */,
 				A64AAC732C6B76F900AE04C1 /* CalendarDataModel.swift in Sources */,
 				A689A9D52CBD294200039F37 /* SupportViewController.swift in Sources */,
@@ -781,6 +804,7 @@
 				A64AAC4D2C4E711800AE04C1 /* MoneyCell.swift in Sources */,
 				A64AAC332C44F5A500AE04C1 /* MyMedicineInformationViewController.swift in Sources */,
 				A62298112C358A3F0099F425 /* MyMedicineViewController.swift in Sources */,
+				A6E54BBC2E8FF79100C3DFA9 /* MedicineEmptyTableViewCell.swift in Sources */,
 				A64AAC212C41455500AE04C1 /* AdditionButtonCell.swift in Sources */,
 				A64AAC512C4E713A00AE04C1 /* HierarchyClassificationCell.swift in Sources */,
 				A64AAC302C42B87800AE04C1 /* FecesDetailCell.swift in Sources */,
@@ -973,7 +997,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MWZL7CC4LD;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -992,7 +1016,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dotinstall.IntestinesSupport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1016,7 +1040,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MWZL7CC4LD;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1035,7 +1059,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dotinstall.IntestinesSupport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
