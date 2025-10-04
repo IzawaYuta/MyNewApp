@@ -20,9 +20,9 @@ class TabViewController: UITabBarController {
         
         UITabBar.appearance().backgroundColor = UIColor(red: 0.4, green: 0.7, blue: 0.4, alpha: 0.2)
         
-        loadSavedTabBarColor()
-        loadDefaultTintColor()
-        loadTintColor()
+//        loadSavedTabBarColor()
+//        loadDefaultTintColor()
+//        loadTintColor()
 
     }
     

@@ -45,7 +45,7 @@ class MedicineAdditionViewController: UIViewController, UITableViewDelegate, UIT
     }
     // 行図鵜を返す
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if medicineRecordDataModel.isEmpty {
+        if medicineDataModel.isEmpty {
             return 1
         } else {
             return medicineDataModel.count
